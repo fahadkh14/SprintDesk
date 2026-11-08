@@ -4,14 +4,14 @@ SET NAMES utf8mb4;
 USE sprintdesk;
 
 INSERT INTO team_members (id,name,email,job_title,avatar_color) VALUES
-(1,'Aarav Sharma','aarav.sharma@sprintdesk.dev','Product Manager','#6938EF'),
-(2,'Priya Nair','priya.nair@sprintdesk.dev','UI/UX Designer','#EE46BC'),
-(3,'Rohan Mehta','rohan.mehta@sprintdesk.dev','Frontend Developer','#2E90FA'),
-(4,'Sneha Kapoor','sneha.kapoor@sprintdesk.dev','Backend Developer','#12B76A'),
-(5,'Vikram Singh','vikram.singh@sprintdesk.dev','DevOps Engineer','#F79009'),
-(6,'Ananya Iyer','ananya.iyer@sprintdesk.dev','QA Engineer','#0BA5EC'),
-(7,'Karan Malhotra','karan.malhotra@sprintdesk.dev','Full-Stack Developer','#7A5AF8'),
-(8,'Meera Joshi','meera.joshi@sprintdesk.dev','Business Analyst','#F04438');
+(1,'Mohd Faisal Khan ','faisal.khan@sprintdesk.dev','Product Manager','#6938EF'),
+(2,'Rahma Parveen','Rahma.parveen@sprintdesk.dev','UI/UX Designer','#EE46BC'),
+(3,'Mohmmad Vaish','vaish.1@sprintdesk.dev','Frontend Developer','#2E90FA'),
+(4,'Shan Mohmmad','shan.mohammad@sprintdesk.dev','Backend Developer','#12B76A'),
+(5,'Mohd Fahad Khan','fahad.kh@sprintdesk.dev','DevOps Engineer','#F79009'),
+(6,'Liba khan','liba.khan@sprintdesk.dev','QA Engineer','#0BA5EC'),
+(7,'Zobia','Zobia.1@sprintdesk.dev','Full-Stack Developer','#7A5AF8'),
+(8,'Saami Khan', 'Saami.khan@sprintdesk.dev','Business Analyst','#F04438');
 
 INSERT INTO categories (id,name,color) VALUES
 (1,'Design','#EE46BC'),
