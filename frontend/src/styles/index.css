@@ -1,0 +1,51 @@
+@import '@fontsource-variable/inter';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --slate-50: 248 250 252; --slate-100: 241 245 249; --slate-200: 226 232 240; --slate-300: 203 213 225;
+    --slate-400: 148 163 184; --slate-500: 100 116 139; --slate-600: 71 85 105; --slate-700: 51 65 85;
+    --slate-800: 30 41 59; --slate-900: 15 23 42;
+    --brand-50: 244 243 255; --brand-100: 235 233 254; --brand-200: 217 214 254; --brand-700: 89 37 220;
+    --grid: #eef0f4;
+  }
+  .dark {
+    color-scheme: dark;
+    --slate-50: 11 16 32; --slate-100: 30 38 64; --slate-200: 42 51 82; --slate-300: 58 68 102;
+    --slate-400: 123 134 166; --slate-500: 152 162 192; --slate-600: 180 189 214; --slate-700: 205 211 230;
+    --slate-800: 227 231 243; --slate-900: 243 245 251;
+    --brand-50: 36 27 77; --brand-100: 47 36 102; --brand-200: 70 55 150; --brand-700: 196 187 255;
+    --grid: #232b48;
+  }
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-slate-50 font-sans text-slate-800; }
+  :focus-visible { @apply outline-none ring-2 ring-brand-500 ring-offset-1; }
+}
+
+/* Only shown on touch devices, where HTML5 drag and drop is unavailable. */
+.touch-only { display: none; }
+@media (hover: none) { .touch-only { display: block; } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Dark-mode surfaces and tinted badges (colours that are not part of the slate/brand scales) */
+.dark .bg-white { background-color: #141a2e; }
+.dark .bg-white\/90 { background-color: rgb(20 26 46 / 0.9); }
+.dark .hover\:bg-white:hover { background-color: #1e2640; }
+.dark .bg-blue-50 { background-color: rgb(46 144 250 / 0.16); }
+.dark .bg-emerald-50 { background-color: rgb(18 183 106 / 0.16); }
+.dark .bg-amber-50 { background-color: rgb(247 144 9 / 0.16); }
+.dark .bg-rose-50, .dark .hover\:bg-rose-50:hover { background-color: rgb(240 68 56 / 0.16); }
+.dark .bg-sky-50 { background-color: rgb(11 165 236 / 0.16); }
+.dark .bg-orange-50 { background-color: rgb(247 144 9 / 0.16); }
+.dark .text-blue-700, .dark .text-blue-600 { color: #84caff; }
+.dark .text-emerald-700, .dark .text-emerald-600 { color: #6ce9a6; }
+.dark .text-amber-700, .dark .text-amber-600 { color: #fec84b; }
+.dark .text-rose-700, .dark .text-rose-600 { color: #fda29b; }
+.dark .text-sky-700 { color: #7cd4fd; }
+.dark .text-orange-700 { color: #fdb022; }
+.dark .hover\:text-rose-600:hover { color: #fda29b; }
