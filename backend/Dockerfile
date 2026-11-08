@@ -1,18 +1,27 @@
-# ---- dependencies ----
-FROM node:22-alpine AS deps
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
-
-# ---- runtime ----
+# Use Node.js Alpine image
 FROM node:22-alpine
-ENV NODE_ENV=production PORT=5761
+
+# Set working directory
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY package.json ./
+
+# Copy package files
+COPY package.json package-lock.json ./
+
+# Install production dependencies
+RUN npm ci --omit=dev
+
+# Copy backend source code
 COPY src ./src
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=5761
+
+# Run application as non-root user
 USER node
+
+# Expose backend port
 EXPOSE 5761
-HEALTHCHECK --interval=15s --timeout=5s --start-period=20s --retries=5 \
-  CMD wget -qO- http://127.0.0.1:5761/health >/dev/null || exit 1
+
+# Start backend application
 CMD ["node", "src/app.js"]
